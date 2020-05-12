@@ -1,5 +1,29 @@
 #!	/usr/bin/env bash
-/opt/couchbase/bin/cbq -o $0.json -q -e couchbase://adb-cb1.gsd.esrl.noaa.gov/mdata -u met_admin -p met_adm_pwd <<-'EOF' 
+Usage="usage: $0 -s server"
+server=""
+while getopts 'hs:' OPTION; do
+  case "$OPTION" in
+    h)
+      echo "$Usage"
+      ;;
+
+    s)
+      server="$OPTARG"
+      ;;
+    *?)
+      echo "$Usage" >&2
+      exit 1
+      ;;
+  esac
+done
+shift "$(($OPTIND -1))"
+if [ "X${server}" = "X" ]; then
+	echo "No server specified: $Usage"
+	exit 1
+else
+	echo "Using server $server"
+fi
+/opt/couchbase/bin/cbq -o $0.json -q -e couchbase://${server}/mdata -u met_admin -p met_adm_pwd <<-'EOF' 
 SELECT raw data
 FROM (
     SELECT *

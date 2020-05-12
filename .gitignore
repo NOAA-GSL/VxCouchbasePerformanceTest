@@ -1,3 +1,5 @@
 my.cnf
 *.out
 *.json
+*.vsdb
+.DS_store
