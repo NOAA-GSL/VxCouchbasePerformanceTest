@@ -1,4 +1,6 @@
 my.cnf
+output*
+output*/*
 *.out
 *.json
 *.vsdb

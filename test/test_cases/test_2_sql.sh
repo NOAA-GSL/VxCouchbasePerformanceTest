@@ -1,5 +1,38 @@
 #!	/usr/bin/env bash
-mysql --defaults-file=my.cnf -vvv  mv_gfs_grid2obs_vsdb <<-'EOF' > "$0.out"
+Usage="usage: $0 -s server [-p(prints prologue)]"
+server=""
+read -d '' prologue << PEOF
+This is a basic test to determine the ability to query header and data fields and 
+to qualify one header predicate value in a subselect, leaving others to default to all possible values, 
+and using an inclusive range for fcst_valid_beg iso values,
+and to to further qualify the data portion with a set of fcst_leads. This test is for un cached sql.
+PEOF
+while getopts 'hps:' OPTION; do
+  case "$OPTION" in
+    h)
+      echo "$Usage"
+      ;;
+    p)
+      echo $prologue
+      exit 1
+      ;;
+    s)
+      server="$OPTARG"
+      ;;
+    *?)
+      echo "$Usage" >&2
+      exit 1
+      ;;
+  esac
+done
+shift "$(($OPTIND -1))"
+if [ "X${server}" = "X" ]; then
+	echo "No server specified: $Usage"
+	exit 1
+else
+	echo "Using server $server"
+fi
+mysql --defaults-file=my.cnf -vvv  mv_gfs_grid2obs_vsdb <<-'EOF' > "output/$0.out"
 RESET QUERY CACHE;
 SELECT SQL_NO_CACHE
        h.model,
@@ -36,5 +69,6 @@ WHERE  BINARY h.model IN ( 'GFS' )
                                     '336', '348', '360', '372', '384' )
        AND BINARY h.fcst_var = 'HGT'
        AND ld.stat_header_id = h.stat_header_id 
-       ORDER BY ld.fcst_valid_beg, ld.fcst_init_beg, h.fcst_lev, h.vx_mask, ld.fcst_lead; 
+ORDER BY ld.fcst_valid_beg, ld.fcst_init_beg, h.fcst_lev, h.vx_mask, ld.fcst_lead; 
 EOF
+grep '|' "output/$0.out" | tr -d '|' | column -t | awk '{printf "%.6f\n", $12}' > "output/$0.fabar.out"
