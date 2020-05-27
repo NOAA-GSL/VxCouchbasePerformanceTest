@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/pierce/CouchbasePerformanceTest/test
+cd /home/pierce/CouchbasePerformanceTest/load
 tstamp=$1
 public="/public/retro/pierce"
 find vsdb_data  -maxdepth 3 -mindepth 3 -type d | while read dir
