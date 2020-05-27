@@ -1,0 +1,66 @@
+output/test_1_epoch_cb.sh.json
+{
+  "elapsedTime": "53.896987ms",
+  "executionTime": "53.831073ms",
+  "resultCount": 848,
+  "resultSize": 374817,
+  "sortCount": 848
+}
+
+output/test_1_iso_cb.sh.json
+{
+  "elapsedTime": "66.447026ms",
+  "executionTime": "66.352859ms",
+  "resultCount": 848,
+  "resultSize": 374817,
+  "sortCount": 848
+}
+
+output/test_1_matchcached_cb.sh.json
+{
+  "elapsedTime": "54.297188ms",
+  "executionTime": "54.198262ms",
+  "resultCount": 848,
+  "resultSize": 374547,
+  "sortCount": 848
+}
+
+output/test_2_cb.sh.json
+{
+  "elapsedTime": "588.100219ms",
+  "executionTime": "588.030869ms",
+  "resultCount": 16960,
+  "resultSize": 6411062,
+  "sortCount": 16960
+}
+
+output/test_2_keys_cb.sh.json
+{
+  "elapsedTime": "587.38633ms",
+  "executionTime": "586.732081ms",
+  "resultCount": 16960,
+  "resultSize": 6411062,
+  "sortCount": 16960
+}
+
+output/test_2_matchcached_cb.sh.json
+{
+  "elapsedTime": "569.936973ms",
+  "executionTime": "569.843287ms",
+  "resultCount": 16960,
+  "resultSize": 6411881,
+  "sortCount": 16960
+}
+
+output/test_1_cached_sql.sh.out
+848 rows in set (0.55 sec)
+
+output/test_1_sql.sh.out
+848 rows in set (0.60 sec)
+
+output/test_2_cached_sql.sh.out
+16960 rows in set (11.84 sec)
+
+output/test_2_sql.sh.out
+16960 rows in set (11.85 sec)
+

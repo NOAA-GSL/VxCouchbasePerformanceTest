@@ -1,0 +1,11 @@
+output/test_1_cached_sql.sh.out
+848 rows in set (14.54 sec)
+
+output/test_1_sql.sh.out
+848 rows in set, 1 warning (14.24 sec)
+
+output/test_2_cached_sql.sh.out
+16960 rows in set (14.28 sec)
+
+output/test_2_sql.sh.out
+16960 rows in set, 1 warning (14.54 sec)
