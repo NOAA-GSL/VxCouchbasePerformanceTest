@@ -7,5 +7,4 @@ else
     exit 1
 fi
 export PYTHONPATH=/home/pierce/METdb/METdbLoad/ush
-load_spec=$1
-time python3 /home/pierce/METdb/METdbLoad/ush/cbload/run_cb_threads.py -t 12 $load_spec 
+time python3 -m cProfile -s cumulative /home/pierce/METdb/METdbLoad/ush/met_db_load.py $load_spec

@@ -4,8 +4,8 @@
   <organization>vxt</organization>
   <group>large_tables</group>
   <connection>
-    <management_system>mysql</management_system>
-    <host>localhost</host>
+    <management_system>cb</management_system>
+    <host>adb-cb4.gsd.esrl.noaa.gov</host>
     <database>mv_gfs_grid2obs_vsdb1</database>
     <user>met_admin</user>
     <password>met_adm_pwd</password>

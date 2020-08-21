@@ -6,7 +6,7 @@
   <connection>
     <management_system>mysql</management_system>
     <host>localhost</host>
-    <database>mv_gfs_grid2obs_vsdb1</database>
+    <database>mv_gfs_grid2obs_vsdb2</database>
     <user>met_admin</user>
     <password>met_adm_pwd</password>
   </connection>
@@ -21,7 +21,7 @@
   <load_mpr>false</load_mpr>
   <load_orank>false</load_orank>
   <force_dup_file>false</force_dup_file>
-  <folder_tmpl>/home/pierce/CouchbasePerformanceTest/test/load/vsdb_data/{stattype}/{cycle}/{model}</folder_tmpl>
+  <folder_tmpl>/data/vsdb_data/{stattype}/{cycle}/{model}</folder_tmpl>
   <load_val>
     <field name="stattype">
       <val>anom</val>
@@ -41,6 +41,6 @@
     </field>
   </load_val>
   <load_xml>true</load_xml>
-  <load_note>mv_gfs_grid2obs_vsdb1</load_note>
+  <load_note>mv_gfs_grid2obs_vsdb2</load_note>
 </load_spec>
 

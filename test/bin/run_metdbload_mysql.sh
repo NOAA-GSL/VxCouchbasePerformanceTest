@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+load_spec=$1
 if [ -f "$load_spec" ]; then
     echo "loading $load_spec"
 else 

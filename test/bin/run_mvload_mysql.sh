@@ -5,6 +5,7 @@ if [ -f "$load_spec" ]; then
 else 
     echo "$load_spec does not exist - must exit"
     exit 1
+fi
 export MV_HOME=/home/pierce/METViewer
 export JAVA_HOME=/home/pierce/jdk-14.0.1
 export PATH=$JAVA_HOME/bin:$PATH
