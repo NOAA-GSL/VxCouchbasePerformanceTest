@@ -5,5 +5,5 @@ else
     echo "$load_spec does not exist - must exit"
     exit 1
 fi
-export PYTHONPATH=/home/pierce/METdb/METdbLoad/ush
-time python3 /home/pierce/METdb/METdbLoad/ush/met_db_load.py $load_spec
+export PYTHONPATH=$METdb/METdbLoad/ush
+time python3 $METdb/METdbLoad/ush/met_db_load.py $load_spec

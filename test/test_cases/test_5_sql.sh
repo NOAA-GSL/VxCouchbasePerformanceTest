@@ -1,58 +1,25 @@
-#!	/usr/bin/env bash
-Usage="usage: $0 -s server [-p(prints prologue)]"
-server=""
+#!/usr/bin/env bash
+source ./getopts.sh
 read -d '' prologue << PEOF
 This is a test of a query captured from a basic die-off plot from the metviewer at
 http://137.75.129.120:8080/metviewer-mysql/servlet  - historical plot named 20200515_162720.
 PEOF
-while getopts 'hps:' OPTION; do
-  case "$OPTION" in
-    h)
-      echo "$Usage"
-      ;;
-    p)
-      echo $prologue
-      exit 1
-      ;;
-    s)
-      server="$OPTARG"
-      ;;
-    *?)
-      echo "$Usage" >&2
-      exit 1
-      ;;
-  esac
-done
-shift "$(($OPTIND -1))"
-if [ "X${server}" = "X" ]; then
-	echo "no server specified - exiting"
-	exit 1
-else
-	echo "Using server $server"
-fi
-
-mysql --defaults-file=my.cnf -vvv  mv_gfs_grid2obs_vsdb <<-'EOF' > "output/$0.out"
-SELECT h.vx_mask,
-       ld.fcst_init_beg,
-       ld.fcst_valid_beg,
-       ld.fcst_lead,
-       h.model,
-       h.fcst_lev,
-       'HGT' fcst_var,
-       'ANOM_CORR' stat_name,
-       ld.total,
-       ld.fabar,
-       ld.oabar,
-       ld.foabar,
-       ld.ffabar,
-       ld.ooabar,
-       'NA' stat_value,
-       'NA' stat_ncl,
-       'NA' stat_ncu,
-       'NA' stat_bcl,
-       'NA' stat_bcu
-FROM stat_header h,
-     line_data_sal1l2 ld
+mysql --defaults-file=my.cnf -vvv  mv_gfs_grid2obs_vsdb2 <<-'EOF' > "output/$0.tmp"
+SELECT 
+h.vx_mask,
+ld.fcst_init_beg,
+ld.fcst_valid_beg,
+ld.fcst_lead,
+h.model,
+h.fcst_lev,
+h.fcst_var,
+ld.oabar,
+ld.fabar,
+ld.ooabar,
+ld.foabar,
+ld.ffabar,
+ld.total
+FROM stat_header h, line_data_sal1l2 ld
 WHERE BINARY h.model IN ('GFS')
   AND BINARY h.fcst_lev IN ('P10', 'P20', 'P30', 'P50', 'P70', 'P100', 'P150', 'P200', 'P250', 'P300', 'P400', 'P500', 'P700', 'P850', 'P925', 'P1000')
   AND BINARY ld.fcst_valid_beg IN ('2019-01-01 00:00:00',
@@ -330,6 +297,19 @@ WHERE BINARY h.model IN ('GFS')
   AND BINARY ld.fcst_lead IN ('144')
   AND BINARY h.fcst_var = 'HGT'
   AND ld.stat_header_id = h.stat_header_id
-ORDER BY ld.fcst_valid_beg, ld.fcst_init_beg, h.fcst_lev, h.vx_mask, ld.fcst_lead;
+  ORDER BY ld.fcst_valid_beg, ld.fcst_init_beg, h.fcst_lev, ld.fcst_lead, h.vx_mask;
 EOF
-grep '|' "output/$0.out" | tr -d '|' | column -t | awk '{printf "%.6f\n", $12}' | uniq > "output/$0.fabar.out"
+
+# get the query time
+echo $0 > "output/$0.time"
+tail -3 output/$0.tmp | head -1 >> "output/$0.time"
+cat output/$0.tmp | grep '|' | tr -d '|' | column -t > output/$0.tmpout
+# get the header row
+head -1 output/$0.tmpout | sed 's/fcst_init_beg.*fcst_valid_beg/fcst_init_beg fibT fcst_valid_beg fvbT /g' > output/$0.tmp1out
+#now the rest of the data
+tail -n+2 output/$0.tmpout | awk '{printf "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%.10f\t%.10f\t%.10f\t%.10f\t%.10f\t%i\n", $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15}' >> output/$0.tmp1out
+cat output/$0.tmp1out | column -t > output/$0.out
+rm output/$0.tmpout
+rm output/$0.tmp1out
+rm output/$0.tmp
+                    
