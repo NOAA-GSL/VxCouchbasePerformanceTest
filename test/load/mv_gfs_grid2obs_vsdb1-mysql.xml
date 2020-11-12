@@ -41,6 +41,6 @@
     </field>
   </load_val>
   <load_xml>true</load_xml>
-  <load_note>mv_gfs_grid2obs_vsdb</load_note>
+  <load_note>mv_gfs_grid2obs_vsdb1</load_note>
 </load_spec>
 

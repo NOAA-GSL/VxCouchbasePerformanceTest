@@ -6,7 +6,7 @@
   <connection>
     <management_system>cb</management_system>
     <host>adb-cb1.gsd.esrl.noaa.gov</host>
-    <database>mv_gfs_grid2obs_vsdb</database>
+    <database>mv_gfs_grid2obs_vsdb1</database>
     <user>met_admin</user>
     <password>met_adm_pwd</password>
   </connection>
@@ -41,6 +41,6 @@
     </field>
   </load_val>
   <load_xml>true</load_xml>
-  <load_note>mv_gfs_grid2obs_vsdb</load_note>
+  <load_note>mv_gfs_grid2obs_vsdb1</load_note>
 </load_spec>
 
