@@ -1,0 +1,6 @@
+NOTE I tried test_2_cached_sql.sh on model-vxtest just to see if these times are somehow unreasonable. The query returned ...
+16960 rows in set (14.28 sec)
+
+on adb-cb1 ...
+output/test_2_cached_sql.sh.out
+16960 rows in set (12.25 sec)

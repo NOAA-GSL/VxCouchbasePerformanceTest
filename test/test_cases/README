@@ -1,0 +1,12 @@
+Each test case i.e. test_n_.... can have multiple flavours which are delineated byt the part of the name after the first "_".
+The output of running a test goes into the output directory and retains the first part of the name i.e. test_n_..... and appends
+Each test case i.e. test_n_.... can have multiple flavours which are delineated byt the part of the name after the first "_".
+The output of running a test goes into the output directory and retains the first part of the name i.e. test_n_..... and appends .out.
+When a givven test is finished there may be several .out files that start with the same test_n_....
+These test outputs should successfully compare.
+
+test_1:
+test_1_cached_sql.sh  test_1_sql.sh  - these are from seperate months so they should not match. The test is simply coparing query times.
+test_1_matchcached_cb.sh  - This output should match the sql cached output
+test_1_epoch_cb.sh  test_1_iso_cb.sh   - these outputs should match and we can learn about query speeds qualified by epoch and iso times.
+
