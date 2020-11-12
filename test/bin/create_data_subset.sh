@@ -36,7 +36,7 @@
 #${public}/vsdb_data/sfc/12Z/ecm
 
 #PARAMETERS
-# -p public_directory
+# -s source_directory i.e. public data
 # -t target_directory - this will be overwritten with the data subset
 # -p data pattern - patterns are glob style patterns e.g. 201[0123456789] or 2019[0123456789] or 2019[012]
 
@@ -47,11 +47,57 @@
 # Subdirectories in the target directory will be created as needed.  
 
 # example:
-# create_data_subset.sh  /public/retro/pierce /home/pierce/test_data 20190[12]
+# create_data_subset.sh  -s /public/retro/pierce -t /home/pierce/test_data -p 20190[12]
 # would create a test data set in /home/test_data that contains all the data for months  january and february in 2019
-public=$1
-target_dir=$2
-tstamp=$3
+public=""
+target_dir=""
+tstamp=""
+Usage="$0 -s source_directory i.e. public data -t target directory -p data glob pattern"
+while getopts 'hp:s:t:' OPTION; do
+  case "$OPTION" in
+    h)
+      echo "$Usage"
+      exit 1
+      ;;
+    p)
+      echo tstamp="$OPTARG"
+      ;;
+    t)
+      target_dir="$OPTARG"
+      ;;
+    s)
+      public="$OPTARG"
+      ;;
+    *?)
+      echo "$Usage" >&2
+      exit 1
+      ;;
+  esac
+done
+shift "$(($OPTIND -1))"
+
+if [ "X${tstamp}" = "X" ]; then
+        echo "No data glob pattern specified: $Usage"
+        exit 1
+else
+        echo "Using data glob pattern ${tstamp}"
+fi
+
+
+if [ "X${target_dir}" = "X" ]; then
+        echo "No target_dir specified: $Usage"
+        exit 1
+else
+        echo "Using target_dir ${tstamp}"
+fi
+
+
+if [ "X${public}" = "X" ]; then
+        echo "No source directory specified: $Usage"
+        exit 1
+else
+        echo "Using source directory ${public}"
+fi
 
 if [ ! -d $target_dir ]; then
 	mkdir -p $target_dir
