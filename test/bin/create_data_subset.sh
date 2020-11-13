@@ -60,7 +60,7 @@ while getopts 'hp:s:t:' OPTION; do
       exit 1
       ;;
     p)
-      echo tstamp="$OPTARG"
+      tstamp="$OPTARG"
       ;;
     t)
       target_dir="$OPTARG"
@@ -100,9 +100,9 @@ else
 fi
 
 if [ ! -d $target_dir ]; then
-	mkdir -p $target_dir
+	mkdir -p $target_dirv/sdb_data
 else
-	rm -rf ${target_dir}/*
+	rm -rf ${target_dir}/vsdb_data/*
 fi
 
 find ${public}/vsdb_data  -maxdepth 3 -mindepth 3 -type d | sed "s|$public/||g" | while read dir

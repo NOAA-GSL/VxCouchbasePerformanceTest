@@ -4,7 +4,7 @@
   <organization>vxt</organization>
   <group>large_tables</group>
   <connection>
-    <management_system>mysql</management_system>
+    <management_system>cb</management_system>
     <host>localhost</host>
     <database>mv_gfs_grid2obs_vsdb1</database>
     <user>met_admin</user>
@@ -21,7 +21,7 @@
   <load_mpr>false</load_mpr>
   <load_orank>false</load_orank>
   <force_dup_file>true</force_dup_file>
-  <folder_tmpl>$CouchbasePerformanceTest/test/load/vsdb_data/{stattype}/{cycle}/{model}</folder_tmpl>
+  <folder_tmpl>/Users/randy.pierce/WebstormProjects/CouchbasePerformanceTest/test/load/vsdb_data/{stattype}/{cycle}/{model}</folder_tmpl>
   <load_val>
     <field name="stattype">
       <val>anom</val>
