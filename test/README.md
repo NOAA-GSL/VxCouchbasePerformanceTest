@@ -362,9 +362,8 @@ excessively large, and the total data size for these 7 tests was nearly 500 MB.
 long-running against the cluster, but not the single node. 
 This is not yet understood. The problem can be observed across multiple test runs._ 
 Further investigation required.
+
 #####table 1 - Tabulated results sql verses single cluster verses multi-node cluster
-
-
 | Test# | SQL | CBS epoch | CBS iso| CBS iso range| CBS keys | CBC epoch | CBC iso | CBC iso range | CBC keys |
 | -----: | -----: | -----: | -----: | -----: | -----: | -----: | -----: | -----: | -----: |
 |1|510|48|-|108|-|63|214|-|-|
