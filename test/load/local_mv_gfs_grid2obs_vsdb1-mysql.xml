@@ -5,7 +5,7 @@
   <group>large_tables</group>
   <connection>
     <management_system>cb</management_system>
-    <host>localhost</host>
+    <host>127.0.0.1</host>
     <database>mv_gfs_grid2obs_vsdb1</database>
     <user>met_admin</user>
     <password>met_adm_pwd</password>

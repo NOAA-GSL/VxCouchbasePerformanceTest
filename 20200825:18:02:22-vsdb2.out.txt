@@ -1,0 +1,259 @@
+
+localhost(SQL)
+test_1_cached_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_1_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_2_cached_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_2_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_3_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_4_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_5_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_6_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+test_9_sql.sh SQL
+Using subset mv_gfs_grid2obs_vsdb2
+Using server localhost
+
+adb-cb4 (CLUSTER)
+test_1_epoch_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_1_iso_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_1_matchcached_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_2_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_2_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_2_matchcached_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_3_iso_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_3_iso_range_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_3_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+test_4_iso_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_4_iso_range_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_4_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+test_5_iso_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_5_iso_range_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_5_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+test_6_iso_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_6_iso_range_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+cbq> test_6_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+test_9_keys_cb.sh CLUSTER
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb4.gsd.esrl.noaa.gov
+
+adb-cb1 (SINGLE)
+test_1_epoch_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_1_iso_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_1_matchcached_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_2_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_2_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_2_matchcached_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_3_iso_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_3_iso_range_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_3_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+test_4_iso_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_4_iso_range_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_4_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+test_5_iso_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_5_iso_range_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_5_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+test_6_iso_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_6_iso_range_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+cbq> test_6_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+test_9_keys_cb.sh SINGLE
+Using subset mv_gfs_grid2obs_vsdb2
+Using server adb-cb1.gsd.esrl.noaa.gov
+----- TIMES-
+output/sql/test_1_cached_sql.sh.time              0.51
+output/sql/test_1_sql.sh.time                     0.51
+output/single_node/test_1_epoch_cb.sh.time        47.90035ms,
+output/single_node/test_1_iso_cb.sh.time          107.682226ms,
+output/single_node/test_1_matchcached_cb.sh.time  55.713669ms,
+output/cluster/test_1_epoch_cb.sh.time            62.536949ms,
+output/cluster/test_1_iso_cb.sh.time              213.796142ms,
+output/cluster/test_1_matchcached_cb.sh.time      91.29137ms,
+----- ASSERTIONS-
+running test_1_assert.sh SINGLE_NODE
+output/single_node/test_1_epoch_cb.sh.out and output/single_node/test_1_iso_cb.sh.out are the same[0m
+output/single_node/test_1_epoch_cb.sh.out and output/sql/test_1_sql.sh.out are the same[0m
+output/sql/test_1_cached_sql.sh.out and output/single_node/test_1_matchcached_cb.sh.out are the same[0m
+------
+running test_1_assert.sh CLUSTER
+output/cluster/test_1_epoch_cb.sh.out and output/cluster/test_1_iso_cb.sh.out are the same[0m
+output/cluster/test_1_epoch_cb.sh.out and output/sql/test_1_sql.sh.out are the same[0m
+output/sql/test_1_cached_sql.sh.out and output/cluster/test_1_matchcached_cb.sh.out are the same[0m
+----- TIMES-
+output/sql/test_2_cached_sql.sh.time              9.86
+output/sql/test_2_sql.sh.time                     9.94
+output/single_node/test_2_cb.sh.time              3.777603118s,
+output/single_node/test_2_keys_cb.sh.time         729.23939ms,
+output/single_node/test_2_matchcached_cb.sh.time  3.648079264s,
+output/cluster/test_2_cb.sh.time                  5.120810483s,
+output/cluster/test_2_keys_cb.sh.time             738.755961ms,
+output/cluster/test_2_matchcached_cb.sh.time      5.360020691s,
+----- ASSERTIONS-
+running test_2_assert.sh SINGLE_NODE
+output/sql/test_2_sql.sh.out and output/single_node/test_2_cb.sh.out output/single_node/test_2_iso_cb.sh.out are the same[0m
+output/sql/test_2_sql.sh.out and output/single_node/test_2_keys_cb.sh.out output/single_node/test_2_iso_cb.sh.out are the same[0m
+output/sql/test_2_cached_sql.sh.out and output/single_node/test_2_matchcached_cb.sh.out are the same[0m
+------
+running test_2_assert.sh CLUSTER
+output/sql/test_2_sql.sh.out and output/cluster/test_2_cb.sh.out output/cluster/test_2_iso_cb.sh.out are the same[0m
+output/sql/test_2_sql.sh.out and output/cluster/test_2_keys_cb.sh.out output/cluster/test_2_iso_cb.sh.out are the same[0m
+output/sql/test_2_cached_sql.sh.out and output/cluster/test_2_matchcached_cb.sh.out are the same[0m
+----- TIMES-
+output/sql/test_3_sql.sh.time                   1.17
+output/single_node/test_3_iso_cb.sh.time        1.648599309s,
+output/single_node/test_3_iso_range_cb.sh.time  1.207164623s,
+output/single_node/test_3_keys_cb.sh.time       1.15772793s,
+output/cluster/test_3_iso_cb.sh.time            4.150638252s,
+output/cluster/test_3_iso_range_cb.sh.time      1.264273966s,
+output/cluster/test_3_keys_cb.sh.time           1.238269669s,
+----- ASSERTIONS-
+running test_3_assert.sh SINGLE_NODE
+output/single_node/test_3_iso_cb.sh.out and output/single_node/test_3_keys_cb.sh.out are the same[0m
+output/single_node/test_3_iso_cb.sh.out and output/sql/test_3_sql.sh.out are the same[0m
+------
+running test_3_assert.sh CLUSTER
+output/cluster/test_3_iso_cb.sh.out and output/cluster/test_3_keys_cb.sh.out are the same[0m
+output/cluster/test_3_iso_cb.sh.out and output/sql/test_3_sql.sh.out are the same[0m
+----- TIMES-
+output/sql/test_4_sql.sh.time                   1.16
+output/single_node/test_4_iso_cb.sh.time        2.00423961s,
+output/single_node/test_4_iso_range_cb.sh.time  1.187213036s,
+output/single_node/test_4_keys_cb.sh.time       1.175354391s,
+output/cluster/test_4_iso_cb.sh.time            4.435038552s,
+output/cluster/test_4_iso_range_cb.sh.time      1.305973082s,
+output/cluster/test_4_keys_cb.sh.time           1.254523977s,
+----- ASSERTIONS-
+running test_4_assert.sh SINGLE_NODE
+output/single_node/test_4_iso_cb.sh.out and output/single_node/test_4_keys_cb.sh.out are the same[0m
+output/single_node/test_4_iso_cb.sh.out and output/sql/test_4_sql.sh.out are the same[0m
+------
+running test_4_assert.sh CLUSTER
+output/cluster/test_4_iso_cb.sh.out and output/cluster/test_4_keys_cb.sh.out are the same[0m
+output/cluster/test_4_iso_cb.sh.out and output/sql/test_4_sql.sh.out are the same[0m
+----- TIMES-
+output/sql/test_5_sql.sh.time                   4.26
+output/single_node/test_5_iso_cb.sh.time        11.194670684s,
+output/single_node/test_5_iso_range_cb.sh.time  1.497641734s,
+output/single_node/test_5_keys_cb.sh.time       1.802722334s,
+output/cluster/test_5_iso_cb.sh.time            11.268298249s,
+output/cluster/test_5_iso_range_cb.sh.time      1.594152326s,
+output/cluster/test_5_keys_cb.sh.time           1.987241551s,
+----- ASSERTIONS-
+running test_5_assert.sh SINGLE_NODE
+output/single_node/test_5_iso_cb.sh.out and output/single_node/test_5_keys_cb.sh.out are the same[0m
+output/single_node/test_5_iso_cb.sh.out and output/sql/test_5_sql.sh.out are the same[0m
+------
+running test_5_assert.sh CLUSTER
+output/cluster/test_5_iso_cb.sh.out and output/cluster/test_5_keys_cb.sh.out are the same[0m
+output/cluster/test_5_iso_cb.sh.out and output/sql/test_5_sql.sh.out are the same[0m
+----- TIMES-
+output/sql/test_6_sql.sh.time                   2.81
+output/single_node/test_6_iso_cb.sh.time        1.710553422s,
+output/single_node/test_6_iso_range_cb.sh.time  1.239672674s,
+output/single_node/test_6_keys_cb.sh.time       1.309459063s,
+output/cluster/test_6_iso_cb.sh.time            34.598895435s,
+output/cluster/test_6_iso_range_cb.sh.time      1.397508917s,
+output/cluster/test_6_keys_cb.sh.time           1.244394003s,
+----- ASSERTIONS-
+running test_6_assert.sh SINGLE_NODE
+output/single_node/test_6_iso_cb.sh.out and output/single_node/test_6_keys_cb.sh.out are the same[0m
+output/single_node/test_6_iso_cb.sh.out and output/sql/test_6_sql.sh.out differ and they should not[0m
+------
+running test_6_assert.sh CLUSTER
+output/cluster/test_6_iso_cb.sh.out and output/cluster/test_6_keys_cb.sh.out are the same[0m
+output/cluster/test_6_iso_cb.sh.out and output/sql/test_6_sql.sh.out differ and they should not[0m
+----- TIMES-
+output/sql/test_9_sql.sh.time              1.21
+output/single_node/test_9_keys_cb.sh.time  1.146294984s,
+output/cluster/test_9_keys_cb.sh.time      1.139080793s,
+----- ASSERTIONS-
+running test_9_assert.sh SINGLE_NODE
+output/sql/test_9_sql.sh.out and output/single_node/test_9_keys_cb.sh.out differ and they should not[0m
+------
+running test_9_assert.sh CLUSTER
+output/sql/test_9_sql.sh.out and output/cluster/test_9_keys_cb.sh.out differ and they should not[0m
