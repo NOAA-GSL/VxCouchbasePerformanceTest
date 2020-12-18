@@ -1,14 +1,11 @@
-
 # Couchbase performance testing
-
-###Purpose
+## Purpose
 This is an effort to validate the feasibility and performance of storing
 MET data in a Couchbase document database, measure and evaluate
 the performance of some basic meteorological queries against this dataset,
 and to learn what are best practices and potential pitfalls.
 
-
-##Prerequisites...
+## Prerequisites
 1. JAVA - at least version 8
 1. python3 (for loading)
     - PyMysql
@@ -58,7 +55,7 @@ different data bases.
 
 ## methodology
 
-###Overview
+### Overview
 The intent was to incrementally load redundant datasets with different subsets (subset is a 
 top-level keyword in our test Couchbase document schema) and compare query times for a rational
 set of meteorological data queries. The test suite queried an instance
@@ -100,11 +97,12 @@ along with all the associated data that corresponds to that header.
 By making the keys algorithmically derivable it is possible to programmatically convert 
 queries to KV operations. The test cases intend to provide examples of this.
 
-###Document Schema
+### Document Schema
 The two most important discoveries in this exercise turn out to be the importance of the document schema in
 Couchbase, and the importance of converting long-running N1QL queries into key value pair queries
 based on the ID field - an artifact of the schema.
 The basic document schema looks like this...
+
 ```
     {
       "id": "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::ECM::G2/NHX::HGT::ECM::P1000::1301616000",
@@ -155,6 +153,7 @@ The basic document schema looks like this...
       ]
     }
 ```
+
 ...
 
 The important things to notice about the schema are...
@@ -208,7 +207,7 @@ into a single document in Couchbase. This does several things.
     fewer documents get indexed.
     1. Reducing the index size reduces the server memory requirements.
  
-###Data
+### Data
 The raw data that gets loaded into MariaDB and Couchbase is comprised of 
 several years of VSDB data (The data goes from Nov 5th, 2006 
 through Nov 30, 2019) for GFS and ECM. There are 95,411 files 
@@ -216,6 +215,7 @@ which average about 1.5 MB each consisting of
 SL1L2, SAL1L2, VL1L2, and VAL1L2 data.
 The data lives in /public/retro/pierce/vsdb_data/...
 This is the load_val section of the mv_load spec.
+
     
     ```
       <load_val>
@@ -237,6 +237,7 @@ This is the load_val section of the mv_load spec.
         </field>
       </load_val>
     ```
+    
 This load spec represents 95,411 data files and about 142GB of raw data on disk.    
 
 To make the actual dataset larger in the couchbase database the data gets loaded
@@ -269,6 +270,7 @@ for the data set, relative to the raw data.
 
 Because of the couchbase schema each couchbase document represents more than one data record. Each document has all the 
 records for a given valid time qualified by the model, the variable, like this...
+
 ```
 "dataType": "VSDB_V01_SAL1L2",
   "subset": "mv_gfs_grid2obs_vsdb1",
@@ -281,11 +283,12 @@ records for a given valid time qualified by the model, the variable, like this..
   "fcst_var": "HGT",
   "fcst_lev": "P1000",
 ```
+
 The field subset allows redundancy. For example, one set of data has the 
 subset "mv_gfs_grid2obs_vsdb", the next "mv_gfs_grid2obs_vsdb1", "the next mv_gfs_grid2obs_vsdb2"
 etc.
 
-###Data Loading
+### Data Loading
 
 #### MariaDB
 The data gets loaded to mysql with bin/run_metdbload_mysql.sh and/or with bin/run_mvload_mysql.sh.
@@ -338,7 +341,7 @@ Each test script takes one of these parameters.
 The script "run_all_tests.sh" runs the entire test suite and produces formatted results 
 on std_out.
 
-##Test Descriptions
+## Test Descriptions
 
 #### test_1_sql.sh
 This is a basic test to determine the ability to query header and 
@@ -400,6 +403,7 @@ This test differs from test_2_sql.sh in that is is an N1QL query against Couchba
 This test differs from test_2_sql.sh in that is is an N1QL query against Couchbase
 and the query is a key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::HGT::GFS::P500::1546300800"
 ....
@@ -435,11 +439,13 @@ data fields qualified with a subselect that specifies a valid begin time range 2
 through 2019-03-10T00:00:00Z for gfs with domains "G2/NHX" and "G2/SHX" with fcst_var  "HGT" 
 and fcst_lev  "P500". The query is a key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::HGT::GFS::P500::1546300800"
 ....
 ]
 ```
+
 This is a couchbase query.
 
 #### test_4_sql.sh
@@ -465,11 +471,13 @@ specified in a range of ISO dates.
 This test differs from test_4_iso_range_cb in that the query is a 
 key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::HGT::GFS::P500::1546300800"
 ....
 ]
 ```
+
 This is an N1QL couchbase query.
 
 #### test_5_sql.sh
@@ -489,11 +497,13 @@ in a range of ISO dates.
 This test differs from test_5_iso_range_cb in that the query is a 
 key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::HGT::GFS::P500::1546300800"
 ....
 ]
 ```
+
 This is an N1QL couchbase query.
 
 
@@ -517,6 +527,7 @@ in a range of ISO dates.
 This test differs from test_6_iso_range_cb in that the query is a 
 key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::VAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::WIND::GFS::P500::1546300800"
 ....
@@ -531,13 +542,16 @@ and a different variable 'HGT'.
 This test differs from test_6_iso_range_cb in that the query is a 
 key value query with keys derived and
 contained in an array like ...
+
 ```
 [ "DD::V01::SAL1L2::mv_gfs_grid2obs_vsdb1::GFS::G2/NHX::HGT::GFS::P500::1546300800"
 ....
 ]
 ```
 
-##Test Results
+
+## Test Results
+
 
 #### These results came from the file 20200825:18:02:22-vsdb2.out.
 This file is the output of a test run "run_all_tests.sh" that was run on a standalone 
@@ -560,7 +574,7 @@ There were two tests that were aimed at discovering if using SQL cache made a hu
 on these queries. The results indicate that for these queries, not a lot of difference, so I 
 omitted those queries from the other tests.
 
-####Exclusions
+#### Exclusions
 Not every test performs every action. For example test_9 only does a key value test
 trying to show the difference of doing a large key value query against a single node 
 verses against a cluster.
@@ -568,7 +582,7 @@ verses against a cluster.
 Several other tests skip the epoch based query because test_1 was clearly demonstrating 
 that using epochs is faster and this result is pretty intuitive, actually.
 
-####What is source code controlled 
+#### What is source code controlled 
 The actual query data is not in source code management as the queries were 
 excessively large, and the total data size for these 7 tests was nearly 500 MB.
 However the tests results are easily reproducible against the data set. We do not anticipate 
@@ -582,9 +596,10 @@ long-running against the cluster, but not the single node.
 This is not yet understood. The problem can be observed across multiple test runs._ 
 Further investigation required.
 
-#####All values are query execution time in milliseconds
+##### All values are query execution time in milliseconds
 
-#####table 1 - Tabulated results sql verses single cluster verses multi-node cluster 
+##### table 1 - Tabulated results sql verses single cluster verses multi-node cluster
+ 
 | TEST | SQL  | SQL cached | CBS epoch | CBS iso | CBS iso range | CBS keys | CBC epoch | CBC iso | CBC iso range | CBC keys | CBC matched | CBS matched |
 |------|------|------------|-----------|---------|---------------|----------|-----------|---------|---------------|----------|-------------|-------------|
 | 1    | 51   | 51         | 47        | 107     | ----          | ----     | 63        | 214     | ----          | ----     | 91          | 55          |
@@ -595,18 +610,21 @@ Further investigation required.
 | 6    | ---- | ----       | ----      | 1711    | 1240          | 1310     | ----      | 34599   | 1398          | 1244     |             |             |
 | 9    | ---- | ----       | ----      | ----    | ----          | 1146     | ----      | ----    | ----          | 1139     |             |             |
 
-#####table 2 - Tabulated results sql verses sql cached. 
+##### table 2 - Tabulated results sql verses sql cached.
+ 
 | TEST | SQL  | SQL cached | difference |percent difference|
 |------|------|------------|------------|------------|
 |    1 |  510 |        510 |          0 |0|
 |    2 | 9940 |       9860 |         80 |0.8113590264|
 
-#####table 3 - Tabulated results iso date N1QL verses epoch
+##### table 3 - Tabulated results iso date N1QL verses epoch
+
 | TEST | CBS epoch | CBS iso | difference | percent     | CBC epoch | CBC iso | difference | percent     |
 |------|-----------|---------|------------|-------------|-----------|---------|------------|-------------|
 |    1 |        47 |     107 |         60 | 56.07476636 |        63 |     214 |        151 | 70.56074766 |
 
-#####table 4 - Tabulated results iso N1QL verses iso range
+##### table 4 - Tabulated results iso N1QL verses iso range
+
 | TEST | CBS iso | CBS iso range | difference | percent     | CBC iso | CBC iso range | difference | percent     |
 |------|---------|---------------|------------|-------------|---------|---------------|------------|-------------|
 |    3 |    1649 |          1207 |        442 | 26.80412371 |    4150 |          1264 |       2886 | 69.54216867 |
@@ -614,7 +632,8 @@ Further investigation required.
 |    5 |   11195 |          1498 |       9697 | 86.61902635 |   11268 |          1594 |       9674 | 85.85374512 |
 |    6 |    1711 |          1240 |        471 | 27.52776154 |   34599 |          1398 |      33201 | 95.95942079 |
 
-#####table 5 - Tabulated results sql verses iso range N1QL verses key/value
+##### table 5 - Tabulated results sql verses iso range N1QL verses key/value
+
 | TEST | SQL  | CBS iso range | difference to sql | percent diff sql |
 |------|------|---------------|-------------------|------------------|
 |    2 | 9940 |          3778 |              6162 |      61.99195171 |
@@ -627,9 +646,10 @@ Further investigation required.
 |    4 | 1160 |          1255 |               -95 |     -8.189655172 |
 |    5 | 4260 |          1987 |              2273 |      53.35680751 |
 
-#####table 6 - Tabulated results N1Ql kv query single node verses cluster
-|------|----------|----------|-----------|---------------|
+##### table 6 - Tabulated results N1Ql kv query single node verses cluster
+
 | TEST | CBS keys | CBC keys | CBC - CBS | percent       |
+|------|----------|----------|-----------|---------------|
 |    2 |      729 |      738 |         9 |   1.219512195 |
 |    3 |     1158 |     1238 |        80 |   6.462035541 |
 |    4 |     1175 |     1255 |        80 |   6.374501992 |
@@ -637,9 +657,9 @@ Further investigation required.
 |    6 |     1310 |     1244 |       -66 |  -5.305466238 |
 |    9 |     1146 |     1139 |        -7 | -0.6145741879 | 
                                                                                  
-##Observations
+## Observations
 
-###Corrrelation to Couchbase best practices
+### Corrrelation to Couchbase best practices
 Many of these results corraborate Couchbase best practices. For example this document
 [Couchbase Querying Data](https://docs.couchbase.com/server/5.0/architecture/querying-data-and-query-data-service.html)
 clearly states that using key value queries is the most performant type of query.
@@ -691,7 +711,7 @@ See table 6. The CBC server (cluster) has four times the data of the CBS (single
 server yet showed a negligible drop in performance. On two test cases, 6 and 9, the performance was even 
 (although very marginally) better.
 
-##Conclusion
+## Conclusion
 The use of Couchbase (or really any document oriented database) is quite
 amenable to meteorological verification data. The expeditious use of key value queries, epochs for
 timestamps, and ranges for dates, coupled with an appropriately designed
