@@ -1,4 +1,6 @@
+
 # Couchbase performance testing
+
 ###Purpose
 This is an effort to validate the feasibility and performance of storing
 MET data in a Couchbase document database, measure and evaluate
@@ -55,6 +57,7 @@ query and massage output data to produce comparable results from
 different data bases.
 
 ## methodology
+
 ###Overview
 The intent was to incrementally load redundant datasets with different subsets (subset is a 
 top-level keyword in our test Couchbase document schema) and compare query times for a rational
@@ -283,10 +286,12 @@ subset "mv_gfs_grid2obs_vsdb", the next "mv_gfs_grid2obs_vsdb1", "the next mv_gf
 etc.
 
 ###Data Loading
+
 #### MariaDB
 The data gets loaded to mysql with bin/run_metdbload_mysql.sh and/or with bin/run_mvload_mysql.sh.
 Before loading data, a database must be preconfigured with the METviewer/sql/mv_mysql.sql script.  
 For load comparisons multiple mariaDB databases can be used. 
+
 #### Couchbase
 The data gets loaded to a couchbase bucket with bin/run_cb.sh which is a wrapper
 for the run_cb_threads.py program. (https://github.com/NOAA-GSL/VxIngest)
@@ -334,6 +339,7 @@ The script "run_all_tests.sh" runs the entire test suite and produces formatted 
 on std_out.
 
 ##Test Descriptions
+
 #### test_1_sql.sh
 This is a basic test to determine the ability to query header and 
 data fields and to qualify header predicate values in a 
@@ -532,6 +538,7 @@ contained in an array like ...
 ```
 
 ##Test Results
+
 #### These results came from the file 20200825:18:02:22-vsdb2.out.
 This file is the output of a test run "run_all_tests.sh" that was run on a standalone 
 server, adb-cb1 which is identical in hardware and software to the 
@@ -552,6 +559,7 @@ Each number represents the number of milliseconds it took to process the query p
 There were two tests that were aimed at discovering if using SQL cache made a huge difference
 on these queries. The results indicate that for these queries, not a lot of difference, so I 
 omitted those queries from the other tests.
+
 ####Exclusions
 Not every test performs every action. For example test_9 only does a key value test
 trying to show the difference of doing a large key value query against a single node 
@@ -559,6 +567,7 @@ verses against a cluster.
 
 Several other tests skip the epoch based query because test_1 was clearly demonstrating 
 that using epochs is faster and this result is pretty intuitive, actually.
+
 ####What is source code controlled 
 The actual query data is not in source code management as the queries were 
 excessively large, and the total data size for these 7 tests was nearly 500 MB.
@@ -572,7 +581,9 @@ if necessary.
 long-running against the cluster, but not the single node. 
 This is not yet understood. The problem can be observed across multiple test runs._ 
 Further investigation required.
+
 #####All values are query execution time in milliseconds
+
 #####table 1 - Tabulated results sql verses single cluster verses multi-node cluster 
 | TEST | SQL  | SQL cached | CBS epoch | CBS iso | CBS iso range | CBS keys | CBC epoch | CBC iso | CBC iso range | CBC keys | CBC matched | CBS matched |
 |------|------|------------|-----------|---------|---------------|----------|-----------|---------|---------------|----------|-------------|-------------|
@@ -617,7 +628,6 @@ Further investigation required.
 |    5 | 4260 |          1987 |              2273 |      53.35680751 |
 
 #####table 6 - Tabulated results N1Ql kv query single node verses cluster
-|      |          |          |           |               |
 |------|----------|----------|-----------|---------------|
 | TEST | CBS keys | CBC keys | CBC - CBS | percent       |
 |    2 |      729 |      738 |         9 |   1.219512195 |
@@ -628,6 +638,7 @@ Further investigation required.
 |    9 |     1146 |     1139 |        -7 | -0.6145741879 | 
                                                                                  
 ##Observations
+
 ###Corrrelation to Couchbase best practices
 Many of these results corraborate Couchbase best practices. For example this document
 [Couchbase Querying Data](https://docs.couchbase.com/server/5.0/architecture/querying-data-and-query-data-service.html)
@@ -644,6 +655,7 @@ this technique is very relevant. **The algorithms that are to be used for creati
 the keys should be part of the metadata for the document store.**
 The test cases themselves do provide examples of deriving keys algorithmically.
 The algorithms (at least for this dataset) are simple concatenations.
+
 ### Key Value queries
 The tests demonstrate (see table 5) The quickest queries are usually using keys.
 However, there were two tests (3 and 4) where it was close. There will be times where the
@@ -651,9 +663,11 @@ dataset can be adequately qualified with a subselect or other means whereby
 a straight N1QL query based on predicates will be sufficient. It will depend on the data.
 But there were never times where the straight SQL or N1QL query was dramatically better than the key value query.
 That said there will be many times that an N1QL is desired and performant enough.
+
 ### Uncached SQL verses cached SQL
 See table 2. There was not a noticeable difference between cached and uncached SQL queries. This might be 
 because the datasets retrieved were quite large in these tests.
+
 ### ISO dates verses epochs.
 With these tests epochs are always faster than querying by ISO dates. I suspect
 that will always be true, because epochs are ordinal integers. The tests
@@ -663,17 +677,20 @@ times it makes good sense to base queries on epochs.
 **NOTE:** That does not mean that isn't a good idea to ingest iso dates into the documents, 
 as there may be good reasons for doing that, just don't query by them. Always have epochs along with the 
 dates to qualify the query.
+
 ### Ranges verses arrays of dates
 Ranges are faster than explicit arrays of dates. See table 4. For tests 3 and 6 
 the range queries were nearly 4 times faster. When given a choice of formulating
 a query a date/time range with epochs might be the fater way to go. This does mean 
 that interval processing and processing holes in the data might require extra code in the
 data processing. That is an application decision, but ranges appear to be faster.
+
 ### Data scaling
 The addition of more data to the cluster did not negatively affect performance.
 See table 6. The CBC server (cluster) has four times the data of the CBS (single node) 
 server yet showed a negligible drop in performance. On two test cases, 6 and 9, the performance was even 
 (although very marginally) better.
+
 ##Conclusion
 The use of Couchbase (or really any document oriented database) is quite
 amenable to meteorological verification data. The expeditious use of key value queries, epochs for
