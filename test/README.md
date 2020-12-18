@@ -663,7 +663,38 @@ Further investigation required.
 |    5 |     1803 |     1987 |       184 |   9.260191243 |
 |    6 |     1310 |     1244 |       -66 |  -5.305466238 |
 |    9 |     1146 |     1139 |        -7 | -0.6145741879 | 
-                                                                                 
+
+##### table 7 - Tabulated results sizes in bytes
+| TEST | record count | size in bytes|
+|--------------------------|------:|---------:|
+ test_1_cached_sql.sh     |   848 | 1.55E+05 |
+| test_1_sql.sh            |   848 | 1.53E+05 |
+| test_2_cached_sql.sh     | 16960 | 3.10E+06 |
+| test_2_sql.sh            | 16960 | 3.10E+06 |
+| test_3_sql.sh            | 28718 | 5.20E+06 |
+| test_4_sql.sh            | 28718 | 5.20E+06 |
+| test_5_sql.sh            |  2168 | 4.10E+05 |
+| test_6_sql.sh            | 28718 | 5.80E+06 |
+| test_9_sql.sh            | 28718 | 5.20E+06 |
+| test_1_epoch_cb.sh       |   848 | 3.82E+05 |
+| test_1_iso_cb.sh         |   848 | 3.82E+05 |
+| test_1_matchcached_cb.sh |   848 | 3.82E+05 |
+| test_2_cb.sh             | 16960 | 7.63E+06 |
+| test_2_keys_cb.sh        | 16960 | 7.63E+06 |
+| test_2_matchcached_cb.sh | 16960 | 7.63E+06 |
+| test_3_iso_cb.sh         | 28718 | 1.29E+07 |
+| test_3_iso_range_cb.sh   | 28718 | 1.29E+07 |
+| test_3_keys_cb.sh        | 28718 | 1.29E+07 |
+| test_4_iso_cb.sh         | 28718 | 1.29E+07 |
+| test_4_iso_range_cb.sh   | 28718 | 1.29E+07 |
+| test_4_keys_cb.sh        | 28718 | 1.29E+07 |
+| test_5_iso_cb.sh         |  2168 | 9.77E+05 |
+| test_5_iso_range_cb.sh   |  2168 | 9.77E+05 |
+| test_5_keys_cb.sh        |  2168 | 9.77E+05 |
+| test_6_iso_cb.sh         | 27636 | 1.48E+07 |
+| test_6_iso_range_cb.sh   | 27636 | 1.48E+07 |
+| test_6_keys_cb.sh        | 27636 | 1.48E+07 |
+| test_9_keys_cb.sh        | 27636 | 1.24E+07 |                                                                                 
 ## Observations
 
 ### Corrrelation to Couchbase best practices
