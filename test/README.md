@@ -263,16 +263,16 @@ and a Couchbase cluster, as well as the types and structure of the test queries.
  
 For the single node couchbase server two redundant copies get loaded, 
 subset mv_gfs_grid2obs_vsdb and mv_gfs_grid2obs_vsdb1 
-This resulted in 63,576,906 documents which represents 190,822 raw vsdb records
+This resulted in 63,576,906 documents which represents 190,822 raw vsdb files
 in the single node couchbase server for a database disk space of 132GB and a raw disk space of 284GB.
 This is data compression (due to schema not actual compression) of around 36%. 
 
-The cluster was loaded with twice as much data in order 
+The cluster got loaded with twice as much data in order 
 to see how it impacted the query times. The cluster had 128,342,347 documents 
-representing 381,644 records and which consumed 578GB of disk database space representing 764GB of raw disk.
+representing 381,644 files and which consumed 578GB of disk database space representing 764GB of raw disk.
 This is a data reduction of 25%. The lower data compression rate, relative to the raw data, 
 is probably due to this data being more redundant. There
-are four copies of the same data which means that the header section is replicated 4 times 
+are four copies of the same data which means that the header section got replicated 4 times 
 for the data set, relative to the raw data. 
 
 Because of the couchbase schema each couchbase document represents more than one data record. Each document has all the 
