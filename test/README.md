@@ -67,7 +67,18 @@ to qualify the couchbase client SDK, as that is beyond the scope of this evaluat
 Part way into the evaluation it became clear the size of the data did not have 
 a significant impact on a query that returned a specific subset of data, as long 
 as the query is a key value pair query, or a proper index for a N1Ql query 
-has been applied. See table 4.
+has been applied, and the data has been distributed across multiple nodes. See table 6. 
+This table shows the difference in querying a single
+subset verses four subsets i.e. four times the data on the three node cluster. 
+The differences are between 0.6 and 
+9.3 percent, depending on the test. The test with the largest returned data set wasn't the
+one with the biggest difference. This indicates that the size of the data queried wasn't
+as much of a factor as the initial assumption. The results verify the Couchbase documentation 
+which explains that if the data indexing has been done properly, with large datasets distributed across
+multiple nodes, the data access time can be largely consistent or even improved. 
+This [document](https://info.couchbase.com/rs/302-GJY-034/images/High_Performance_With_Distributed_Caching_Couchbase.pdf) 
+more fully explains how using the Couchbase architecture to distribute data across multiple nodes
+keeps data access latency small.
 
 #### Indexing
 It is beyond the scope of this evaluation to research the optimal indexing strategies. 
