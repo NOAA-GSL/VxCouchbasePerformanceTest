@@ -66,7 +66,7 @@ to qualify the couchbase client SDK, as that is beyond the scope of this evaluat
 
 Part way into the evaluation it became clear the size of the data did not have 
 a significant impact on a query that returned a specific subset of data, as long 
-as the query is a key value pair query, or a proper index for the query 
+as the query is a key value pair query, or a proper index for a N1Ql query 
 has been applied. See table 4.
 
 #### Indexing
@@ -213,9 +213,16 @@ several years of VSDB data (The data goes from Nov 5th, 2006
 through Nov 30, 2019) for GFS and ECM. There are 95,411 files 
 which average about 1.5 MB each consisting of 
 SL1L2, SAL1L2, VL1L2, and VAL1L2 data.
-The data lives in /public/retro/pierce/vsdb_data/...
-This is the load_val section of the mv_load spec.
 
+The original data set resides on hera in /scratch1/NCEPDEV/global/Fanglin.Yang/stat/vsdb_data 
+and was copied to the local server adb-cb1 and rearranged in order to make it easier to load
+with MetDBLoad and VXingest. Having the data local minimized 
+the effects of a network mount point on loading times. This data set 
+has years of accumulated VSDB files and is continually being appended by EMC, 
+which is why it was chosen. The rearranged data lives in /public/retro/pierce/vsdb_data
+which is a GSL cummulo mount point as well as on adb-cb1.
+
+This is the load_val section of the mv_load spec.
     
     ```
       <load_val>
