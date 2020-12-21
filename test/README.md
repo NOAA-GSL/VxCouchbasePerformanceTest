@@ -546,7 +546,9 @@ time.
 
 Each test script takes one of these parameters.
 
--   -s server - specifies the mariaDB or CB server
+-   -s server - specifies the mariaDB or CB server, adb-cb1 is the
+    single Couchbase server and adb-cb4 is the three node Couchbase
+    cluster.
 
 -   -S subset - specifies the Couchbase subset or the sql database
 
@@ -849,7 +851,7 @@ long-running against the cluster, but not the single node. This is not
 yet understood. The problem can be observed across multiple test runs.*
 Further investigation required.
 
-##### All values are query execution time in milliseconds
+##### All values are query execution time in milliseconds, SQL is MariaDB, CBS is Couchbase server, CBC is Couchbase three node cluster.
 
 ##### table 1 - Tabulated results sql versus single cluster versus multi-node cluster
 
