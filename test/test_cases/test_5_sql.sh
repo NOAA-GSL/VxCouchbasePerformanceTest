@@ -2,7 +2,7 @@
 source ./getopts.sh
 read -d '' prologue << PEOF
 This is a test of a query captured from a basic die-off plot from the metviewer at
-http://137.75.129.120:8080/metviewer-mysql/servlet  - historical plot named 20200515_162720.
+http://137.75.129.120:8080/metviewer-mysql  - historical plot named 20200515_162720.
 PEOF
 mysql --defaults-file=my.cnf -vvv  mv_gfs_grid2obs_vsdb2 <<-'EOF' > "output/$0.tmp"
 SELECT 

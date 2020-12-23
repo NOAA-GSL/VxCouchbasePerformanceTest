@@ -1,0 +1,254 @@
+Single node output of lshw -short -brief -sanitize for adb-cb1 (single node)
+
+H/W path        Device  Class          Description
+==================================================
+                        system         Computer
+/0                      bus            Motherboard
+/0/0                    memory         31GiB System memory
+/0/1                    processor      AMD EPYC 7251 8-Core Processor
+/0/100                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/100/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Management Unit
+/0/100/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/100/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/100/1.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/100/1.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/100/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/100/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/100/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Security Processor
+/0/100/7.1/0.3          bus            Zeppelin USB 3.0 Host controller
+/0/100/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/100/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/100/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/100/14               bus            FCH SMBus Controller
+/0/100/14.3             bridge         FCH LPC Bridge
+/0/101                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/102                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/103                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/104                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/105                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/106                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/107                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 0
+/0/108                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 1
+/0/109                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 2
+/0/10a                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 3
+/0/10b                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 4
+/0/10c                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 5
+/0/10d                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
+/0/10e                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
+/0/10f                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 0
+/0/110                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 1
+/0/111                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 2
+/0/112                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 3
+/0/113                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 4
+/0/114                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 5
+/0/115                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
+/0/116                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
+/0/117                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 0
+/0/118                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 1
+/0/119                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 2
+/0/11a                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 3
+/0/11b                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 4
+/0/11c                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 5
+/0/11d                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
+/0/11e                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
+/0/11f                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 0
+/0/120                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 1
+/0/121                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 2
+/0/122                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 3
+/0/123                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 4
+/0/124                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 5
+/0/125                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 6
+/0/126                  bridge         Family 17h (Models 00h-0fh) Data Fabric: Device 18h; Function 7
+/0/127                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/127/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Management Unit
+/0/127/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/127/1.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/127/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/127/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/127/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Security Processor
+/0/127/7.1/0.3          bus            Zeppelin USB 3.0 Host controller
+/0/127/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/127/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/127/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/128                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/129                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/12a                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/12b                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/12c                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/12d                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/12e                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/12e/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Management Unit
+/0/12e/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/12e/1.1/0    em1     network        NetXtreme BCM5720 2-port Gigabit Ethernet PCIe
+/0/12e/1.1/0.1  em2     network        NetXtreme BCM5720 2-port Gigabit Ethernet PCIe
+/0/12e/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/12e/1.2/0            bridge         PCI Express Bridge
+/0/12e/1.2/0/0          display        Integrated Matrox G200eW3 Graphics Controller
+/0/12e/1.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/12e/1.4/0    p1p1    network        BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller
+/0/12e/1.4/0.1  p1p2    network        BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller
+/0/12e/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/12e/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/12e/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Security Processor
+/0/12e/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/12e/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/12e/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/12e/8.1/0.2          storage        FCH SATA Controller [AHCI mode]
+/0/12f                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/130                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/131                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/132                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/133                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/134                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/135                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/135/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Management Unit
+/0/135/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/135/1.1/0            storage        SAS3008 PCI-Express Fusion-MPT SAS-3
+/0/135/3.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/135/3.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/135/3.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/135/3.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Bridge
+/0/135/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/135/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/135/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Security Processor
+/0/135/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe GPP Bridge 0 to Bus B
+/0/135/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/135/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/136                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/137                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/138                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/139                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/13a                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/13b                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Host Bridge
+/0/2                    system         PnP device PNP0c01
+/0/3                    system         PnP device PNP0b00
+/0/4                    communication  PnP device PNP0501
+/0/5                    communication  PnP device PNP0501
+WARNING: output may be incomplete or inaccurate, you should run this program as super-user.
+
+Cluster node output of lshw -short -quiet -sanitize for adb-cb4 (cluster node)
+H/W path        Device  Class          Description
+==================================================
+                        system         Computer
+/0                      bus            Motherboard
+/0/0                    memory         31GiB System memory
+/0/1                    processor      AMD EPYC 7251 8-Core Processor
+/0/100                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/100/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Ma
+/0/100/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/100/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/100/1.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/100/1.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/100/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/100/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/100/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Secu
+/0/100/7.1/0.3          bus            Zeppelin USB 3.0 Host controller
+/0/100/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/100/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/100/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/100/14               bus            FCH SMBus Controller
+/0/100/14.3             bridge         FCH LPC Bridge
+/0/101                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/102                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/103                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/104                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/105                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/106                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/107                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/108                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/109                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10a                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10b                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10c                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10d                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10e                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/10f                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/110                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/111                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/112                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/113                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/114                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/115                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/116                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/117                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/118                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/119                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11a                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11b                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11c                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11d                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11e                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/11f                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/120                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/121                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/122                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/123                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/124                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/125                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/126                  bridge         Family 17h (Models 00h-0fh) Data Fabric:
+/0/127                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/127/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Ma
+/0/127/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/127/1.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/127/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/127/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/127/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Secu
+/0/127/7.1/0.3          bus            Zeppelin USB 3.0 Host controller
+/0/127/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/127/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/127/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/128                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/129                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/12a                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/12b                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/12c                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/12d                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/12e                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/12e/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Ma
+/0/12e/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/12e/1.1/0    em1     network        NetXtreme BCM5720 2-port Gigabit Ethernet
+/0/12e/1.1/0.1  em2     network        NetXtreme BCM5720 2-port Gigabit Ethernet
+/0/12e/1.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/12e/1.2/0            bridge         PCI Express Bridge
+/0/12e/1.2/0/0          display        Integrated Matrox G200eW3 Graphics Contro
+/0/12e/1.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/12e/1.4/0    p1p1    network        BCM57416 NetXtreme-E Dual-Media 10G RDMA
+/0/12e/1.4/0.1  p1p2    network        BCM57416 NetXtreme-E Dual-Media 10G RDMA
+/0/12e/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/12e/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/12e/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Secu
+/0/12e/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/12e/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/12e/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/12e/8.1/0.2          storage        FCH SATA Controller [AHCI mode]
+/0/12f                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/130                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/131                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/132                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/133                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/134                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/135                  bridge         Family 17h (Models 00h-0fh) Root Complex
+/0/135/0.2              generic        Family 17h (Models 00h-0fh) I/O Memory Ma
+/0/135/1.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/135/1.1/0            storage        SAS3008 PCI-Express Fusion-MPT SAS-3
+/0/135/3.1              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/135/3.2              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/135/3.3              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/135/3.4              bridge         Family 17h (Models 00h-0fh) PCIe GPP Brid
+/0/135/7.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/135/7.1/0            generic        Zeppelin/Raven/Raven2 PCIe Dummy Function
+/0/135/7.1/0.2          generic        Family 17h (Models 00h-0fh) Platform Secu
+/0/135/8.1              bridge         Family 17h (Models 00h-0fh) Internal PCIe
+/0/135/8.1/0            generic        Zeppelin/Renoir PCIe Dummy Function
+/0/135/8.1/0.1          generic        Zeppelin Cryptographic Coprocessor NTBCCP
+/0/136                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/137                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/138                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/139                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/13a                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/13b                  bridge         Family 17h (Models 00h-1fh) PCIe Dummy Ho
+/0/2                    system         PnP device PNP0c01
+/0/3                    system         PnP device PNP0b00
+/0/4                    communication  PnP device PNP0501
+/0/5                    communication  PnP device PNP0501
+WARNING: output may be incomplete or inaccurate, you should run this program as super-user.
