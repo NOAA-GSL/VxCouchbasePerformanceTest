@@ -1135,8 +1135,13 @@ performance. On two test cases, 6 and 9, the performance was even
 ## **Conclusion**
 
 The use of Couchbase (or really any document oriented database) is quite
-amenable to meteorological verification data. The expeditious use of key
-value queries, epochs for timestamps, subselect clauses, and ranges for
-dates, coupled with an appropriately designed schema that includes
-header data with an associated data structure, can be very performant
-even as data scales up.
+amenable to METviewer data, and meteorological data in general. The
+expeditious use of key value queries, epochs for timestamps, subselect
+clauses, and ranges for dates, coupled with an appropriately designed
+schema that includes header data with an associated data structure, can
+be very performant even as data scales up.
+
+It is possible to convert current SQL METviewer queries to N1QL queries
+and make those queries performant by judicious use of indexes, date
+ranges, and subselects but converting the queries to key value queries
+is the most performant approach.
